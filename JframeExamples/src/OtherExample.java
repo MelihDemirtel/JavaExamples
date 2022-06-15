@@ -1,3 +1,8 @@
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -25,17 +30,23 @@ public class OtherExample extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblResult = new javax.swing.JLabel();
+        lblResult1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        txtNumber1 = new javax.swing.JTextField();
+        btnSum = new javax.swing.JButton();
+        btnEnter = new javax.swing.JButton();
+        lblOperator = new javax.swing.JLabel();
+        lblResult2 = new javax.swing.JLabel();
+        lblResult3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblResult.setBackground(new java.awt.Color(0, 204, 102));
-        lblResult.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lblResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResult.setText("RESULT");
-        lblResult.setBorder(new javax.swing.border.MatteBorder(null));
-        lblResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblResult1.setBackground(new java.awt.Color(0, 204, 102));
+        lblResult1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblResult1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResult1.setText("RESULT1");
+        lblResult1.setBorder(new javax.swing.border.MatteBorder(null));
+        lblResult1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnBack.setText("<-- Back");
@@ -45,23 +56,76 @@ public class OtherExample extends javax.swing.JFrame {
             }
         });
 
+        txtNumber1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        btnSum.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnSum.setText("+");
+        btnSum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumActionPerformed(evt);
+            }
+        });
+
+        btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEnter.setText("ENTER");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterActionPerformed(evt);
+            }
+        });
+
+        lblOperator.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblOperator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOperator.setText("OPERATOR");
+        lblOperator.setBorder(new javax.swing.border.MatteBorder(null));
+
+        lblResult2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblResult2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResult2.setText("RESULT2");
+        lblResult2.setBorder(new javax.swing.border.MatteBorder(null));
+
+        lblResult3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResult3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResult3.setText("RESULT3");
+        lblResult3.setBorder(new javax.swing.border.MatteBorder(null));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                        .addComponent(btnEnter))
                     .addComponent(btnBack)
-                    .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(lblResult1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNumber1)
+                    .addComponent(lblOperator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblResult2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblResult3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblResult1)
+                .addGap(18, 18, 18)
+                .addComponent(lblOperator)
+                .addGap(18, 18, 18)
+                .addComponent(lblResult2)
+                .addGap(18, 18, 18)
+                .addComponent(lblResult3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSum)
+                    .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addComponent(btnBack)
                 .addContainerGap())
         );
@@ -74,6 +138,30 @@ public class OtherExample extends javax.swing.JFrame {
             example2.setVisible(true);
             this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumActionPerformed
+        Base base = new Base();
+        
+        lblResult1.setText(String.valueOf(txtNumber1.getText()));
+        base.setNumber1(Double.valueOf(lblResult1.getText()));
+        lblOperator.setText("+");
+        txtNumber1.setText("");
+     
+    }//GEN-LAST:event_btnSumActionPerformed
+
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        Base base = new Base();
+        
+        lblResult1.setText(String.valueOf(base.getNumber1()));
+        lblResult2.setText(String.valueOf(txtNumber1.getText()));
+        base.setNumber2(Double.valueOf(lblResult2.getText()));
+        lblOperator.setText("+");
+        txtNumber1.setText("");
+        
+        //lblResult3.setText(String.valueOf(base.getResultSumming()));
+        double result = Double.valueOf(lblResult1.getText())+Double.valueOf(lblResult2.getText());
+        lblResult3.setText(String.valueOf(result));
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,6 +189,7 @@ public class OtherExample extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(OtherExample.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+     
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -112,6 +201,16 @@ public class OtherExample extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel lblResult;
+    private javax.swing.JButton btnEnter;
+    private javax.swing.JButton btnSum;
+    private javax.swing.JLabel lblOperator;
+    private javax.swing.JLabel lblResult1;
+    private javax.swing.JLabel lblResult2;
+    private javax.swing.JLabel lblResult3;
+    private javax.swing.JTextField txtNumber1;
     // End of variables declaration//GEN-END:variables
+
+    private Object resultSum(ArrayList numbers) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

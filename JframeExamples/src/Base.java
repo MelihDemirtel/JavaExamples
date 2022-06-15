@@ -8,13 +8,13 @@
  * @author EXT02D47194
  */
 public class Base {
-    double number1;
-    double number2;
-    double resultAvarage;
-    double resultSumming;
-    double resultExtraction;
-    double resultMultiplication;
-    double resultDivision;
+    private double number1;
+    private double number2;
+    private double resultAvarage;
+    private double resultSumming;
+    private double resultExtraction;
+    private double resultMultiplication;
+    private double resultDivision;
 
     public double getNumber1() {
         return number1;
@@ -22,6 +22,14 @@ public class Base {
 
     public double getNumber2() {
         return number2;
+    }
+
+    public void setNumber1(double number1) {
+        this.number1 = number1;
+    }
+
+    public void setNumber2(double number2) {
+        this.number2 = number2;
     }
 
     public double getResultAvarage() {
@@ -43,5 +51,7 @@ public class Base {
     public double getResultDivision() {
         return number1 / number2;
     }
+
+    
     
 }

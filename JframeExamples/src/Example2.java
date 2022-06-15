@@ -157,8 +157,8 @@ public class Example2 extends javax.swing.JFrame {
 
     private void btnAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvarageActionPerformed
         Base base = new Base();
-        base.number1 = Integer.valueOf(txtNumber1.getText());
-        base.number2 = Integer.valueOf(txtNumber2.getText());
+        base.setNumber1(Integer.valueOf(txtNumber1.getText()));
+        base.setNumber2(Integer.valueOf(txtNumber2.getText()));
         
         base.getResultAvarage();
         
@@ -167,8 +167,8 @@ public class Example2 extends javax.swing.JFrame {
 
     private void btnSummingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSummingActionPerformed
         Base base = new Base();
-        base.number1 = Integer.valueOf(txtNumber1.getText());
-        base.number2 = Integer.valueOf(txtNumber2.getText());
+        base.setNumber1(Integer.valueOf(txtNumber1.getText()));
+        base.setNumber2(Integer.valueOf(txtNumber2.getText()));
         
         base.getResultSumming();
         lblResult.setText(String.valueOf(base.getResultSumming()));
@@ -176,8 +176,8 @@ public class Example2 extends javax.swing.JFrame {
 
     private void btnExtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExtractionActionPerformed
         Base base = new Base();
-        base.number1 = Integer.valueOf(txtNumber1.getText());
-        base.number2 = Integer.valueOf(txtNumber2.getText());
+        base.setNumber1(Integer.valueOf(txtNumber1.getText()));
+        base.setNumber2(Integer.valueOf(txtNumber2.getText()));
         
         base.getResultExtraction();
         lblResult.setText(String.valueOf(base.getResultExtraction()));
@@ -185,8 +185,8 @@ public class Example2 extends javax.swing.JFrame {
 
     private void btnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicationActionPerformed
         Base base = new Base();
-        base.number1 = Integer.valueOf(txtNumber1.getText());
-        base.number2 = Integer.valueOf(txtNumber2.getText());
+        base.setNumber1(Integer.valueOf(txtNumber1.getText()));
+        base.setNumber2(Integer.valueOf(txtNumber2.getText()));
         
         base.getResultMultiplication();
         lblResult.setText(String.valueOf(base.getResultMultiplication()));
@@ -194,8 +194,8 @@ public class Example2 extends javax.swing.JFrame {
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
         Base base = new Base();
-        base.number1 = Integer.valueOf(txtNumber1.getText());
-        base.number2 = Integer.valueOf(txtNumber2.getText());
+        base.setNumber1(Integer.valueOf(txtNumber1.getText()));
+        base.setNumber2(Integer.valueOf(txtNumber2.getText()));
         
         base.getResultDivision();
         lblResult.setText(String.valueOf(base.getResultDivision()));
