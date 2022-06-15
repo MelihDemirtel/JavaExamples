@@ -25,21 +25,142 @@ public class Example1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblResult = new javax.swing.JLabel();
+        btnSumming = new javax.swing.JButton();
+        btnExraction = new javax.swing.JButton();
+        btnMultiplication = new javax.swing.JButton();
+        btnDivision = new javax.swing.JButton();
+        txtNumber1 = new javax.swing.JTextField();
+        txtNumber2 = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblResult.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResult.setText("RESULT");
+        lblResult.setBorder(new javax.swing.border.MatteBorder(null));
+
+        btnSumming.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSumming.setText("+");
+        btnSumming.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSummingActionPerformed(evt);
+            }
+        });
+
+        btnExraction.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnExraction.setText("-");
+        btnExraction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExractionActionPerformed(evt);
+            }
+        });
+
+        btnMultiplication.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnMultiplication.setText("*");
+        btnMultiplication.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicationActionPerformed(evt);
+            }
+        });
+
+        btnDivision.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDivision.setText("/");
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
+
+        txtNumber1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        txtNumber2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnSumming)
+                                .addComponent(btnMultiplication))
+                            .addGap(26, 26, 26)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnExraction)
+                                .addComponent(btnDivision)))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblResult)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSumming)
+                    .addComponent(btnExraction))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMultiplication)
+                    .addComponent(btnDivision))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSummingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSummingActionPerformed
+        double number1 = Integer.valueOf(txtNumber1.getText());
+        double number2 = Integer.valueOf(txtNumber2.getText());
+        
+        double result = number1 + number2;
+        
+        lblResult.setText(String.valueOf(result));
+    }//GEN-LAST:event_btnSummingActionPerformed
+
+    private void btnExractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExractionActionPerformed
+        double number1 = Integer.valueOf(txtNumber1.getText());
+        double number2 = Integer.valueOf(txtNumber2.getText());
+        
+        double result = number1 - number2;
+        
+        lblResult.setText(String.valueOf(result));
+    }//GEN-LAST:event_btnExractionActionPerformed
+
+    private void btnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicationActionPerformed
+        double number1 = Integer.valueOf(txtNumber1.getText());
+        double number2 = Integer.valueOf(txtNumber2.getText());
+        
+        double result = number1 * number2;
+        
+        lblResult.setText(String.valueOf(result));
+    }//GEN-LAST:event_btnMultiplicationActionPerformed
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+        double number1 = Integer.valueOf(txtNumber1.getText());
+        double number2 = Integer.valueOf(txtNumber2.getText());
+        
+        try{
+            double result = number1 / number2;
+            lblResult.setText(String.valueOf(result));
+        }catch(ArithmeticException e){
+            lblResult.setText(e.getMessage());
+        }
+       
+    }//GEN-LAST:event_btnDivisionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +198,12 @@ public class Example1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDivision;
+    private javax.swing.JButton btnExraction;
+    private javax.swing.JButton btnMultiplication;
+    private javax.swing.JButton btnSumming;
+    private javax.swing.JLabel lblResult;
+    private javax.swing.JTextField txtNumber1;
+    private javax.swing.JTextField txtNumber2;
     // End of variables declaration//GEN-END:variables
 }
