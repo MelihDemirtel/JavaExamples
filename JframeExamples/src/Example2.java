@@ -28,23 +28,75 @@ public class Example2 extends javax.swing.JFrame {
         lblResult = new javax.swing.JLabel();
         txtNumber1 = new javax.swing.JTextField();
         txtNumber2 = new javax.swing.JTextField();
-        btbAvarage = new javax.swing.JButton();
+        btnAvarage = new javax.swing.JButton();
+        btnSumming = new javax.swing.JButton();
+        btnExtraction = new javax.swing.JButton();
+        btnMultiplication = new javax.swing.JButton();
+        btnDivision = new javax.swing.JButton();
+        btnOtherExample = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblResult.setBackground(new java.awt.Color(0, 204, 102));
         lblResult.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblResult.setText("RESULT");
+        lblResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResult.setBorder(new javax.swing.border.MatteBorder(null));
+        lblResult.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtNumber1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
         txtNumber2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        btbAvarage.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btbAvarage.setText("AVARAGE");
-        btbAvarage.addActionListener(new java.awt.event.ActionListener() {
+        btnAvarage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAvarage.setText("AVARAGE");
+        btnAvarage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btbAvarageActionPerformed(evt);
+                btnAvarageActionPerformed(evt);
+            }
+        });
+
+        btnSumming.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnSumming.setText("+");
+        btnSumming.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSumming.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSummingActionPerformed(evt);
+            }
+        });
+
+        btnExtraction.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnExtraction.setText("-");
+        btnExtraction.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExtraction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExtractionActionPerformed(evt);
+            }
+        });
+
+        btnMultiplication.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnMultiplication.setText("*");
+        btnMultiplication.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnMultiplication.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicationActionPerformed(evt);
+            }
+        });
+
+        btnDivision.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnDivision.setText("/");
+        btnDivision.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
+
+        btnOtherExample.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnOtherExample.setText("Other Example Page -->");
+        btnOtherExample.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOtherExampleActionPerformed(evt);
             }
         });
 
@@ -54,45 +106,106 @@ public class Example2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btbAvarage)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnOtherExample))
+                    .addComponent(lblResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                        .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblResult)
-                .addGap(137, 137, 137))
+                        .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(btnSumming)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAvarage)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnExtraction)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMultiplication)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDivision)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblResult)
-                .addGap(27, 27, 27)
+                .addGap(16, 16, 16)
+                .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addComponent(btbAvarage)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAvarage)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSumming)
+                    .addComponent(btnExtraction)
+                    .addComponent(btnMultiplication)
+                    .addComponent(btnDivision))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnOtherExample)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btbAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbAvarageActionPerformed
-        double number1 = Integer.valueOf(txtNumber1.getText());
-        double number2 = Integer.valueOf(txtNumber2.getText());
+    private void btnAvarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvarageActionPerformed
+        Base base = new Base();
+        base.number1 = Integer.valueOf(txtNumber1.getText());
+        base.number2 = Integer.valueOf(txtNumber2.getText());
         
-        double result = (number1 + number2) / 2;
+        base.getResultAvarage();
         
-        lblResult.setText(String.valueOf(result));
-    }//GEN-LAST:event_btbAvarageActionPerformed
+        lblResult.setText(String.valueOf(base.getResultAvarage()));
+    }//GEN-LAST:event_btnAvarageActionPerformed
+
+    private void btnSummingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSummingActionPerformed
+        Base base = new Base();
+        base.number1 = Integer.valueOf(txtNumber1.getText());
+        base.number2 = Integer.valueOf(txtNumber2.getText());
+        
+        base.getResultSumming();
+        lblResult.setText(String.valueOf(base.getResultSumming()));
+    }//GEN-LAST:event_btnSummingActionPerformed
+
+    private void btnExtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExtractionActionPerformed
+        Base base = new Base();
+        base.number1 = Integer.valueOf(txtNumber1.getText());
+        base.number2 = Integer.valueOf(txtNumber2.getText());
+        
+        base.getResultExtraction();
+        lblResult.setText(String.valueOf(base.getResultExtraction()));
+    }//GEN-LAST:event_btnExtractionActionPerformed
+
+    private void btnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicationActionPerformed
+        Base base = new Base();
+        base.number1 = Integer.valueOf(txtNumber1.getText());
+        base.number2 = Integer.valueOf(txtNumber2.getText());
+        
+        base.getResultMultiplication();
+        lblResult.setText(String.valueOf(base.getResultMultiplication()));
+    }//GEN-LAST:event_btnMultiplicationActionPerformed
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+        Base base = new Base();
+        base.number1 = Integer.valueOf(txtNumber1.getText());
+        base.number2 = Integer.valueOf(txtNumber2.getText());
+        
+        base.getResultDivision();
+        lblResult.setText(String.valueOf(base.getResultDivision()));
+    }//GEN-LAST:event_btnDivisionActionPerformed
+
+    private void btnOtherExampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOtherExampleActionPerformed
+            OtherExample otherExample = new OtherExample();
+            otherExample.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_btnOtherExampleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,10 +240,16 @@ public class Example2 extends javax.swing.JFrame {
                 new Example2().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btbAvarage;
+    private javax.swing.JButton btnAvarage;
+    private javax.swing.JButton btnDivision;
+    private javax.swing.JButton btnExtraction;
+    private javax.swing.JButton btnMultiplication;
+    private javax.swing.JButton btnOtherExample;
+    private javax.swing.JButton btnSumming;
     private javax.swing.JLabel lblResult;
     private javax.swing.JTextField txtNumber1;
     private javax.swing.JTextField txtNumber2;
