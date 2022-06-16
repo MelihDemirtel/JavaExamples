@@ -32,6 +32,7 @@ public class Example1 extends javax.swing.JFrame {
         btnDivision = new javax.swing.JButton();
         txtNumber1 = new javax.swing.JTextField();
         txtNumber2 = new javax.swing.JTextField();
+        btnExample2Page = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,14 @@ public class Example1 extends javax.swing.JFrame {
 
         txtNumber2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
+        btnExample2Page.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExample2Page.setText("Example2 Page -->");
+        btnExample2Page.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExample2PageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,16 +96,17 @@ public class Example1 extends javax.swing.JFrame {
                         .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnSumming)
-                                .addComponent(btnMultiplication))
-                            .addGap(26, 26, 26)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnExraction)
-                                .addComponent(btnDivision)))))
+                    .addComponent(lblResult, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSumming)
+                            .addComponent(btnMultiplication))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnExraction)
+                            .addComponent(btnDivision))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExample2Page)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -115,7 +125,8 @@ public class Example1 extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMultiplication)
-                    .addComponent(btnDivision))
+                    .addComponent(btnDivision)
+                    .addComponent(btnExample2Page))
                 .addGap(26, 26, 26))
         );
 
@@ -162,6 +173,12 @@ public class Example1 extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnDivisionActionPerformed
 
+    private void btnExample2PageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExample2PageActionPerformed
+            Example2 example2 = new Example2();
+            example2.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_btnExample2PageActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,6 +216,7 @@ public class Example1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDivision;
+    private javax.swing.JButton btnExample2Page;
     private javax.swing.JButton btnExraction;
     private javax.swing.JButton btnMultiplication;
     private javax.swing.JButton btnSumming;

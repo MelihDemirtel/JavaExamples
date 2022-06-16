@@ -32,12 +32,12 @@ public class OtherExample extends javax.swing.JFrame {
 
         lblResult1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        txtNumber1 = new javax.swing.JTextField();
         btnSum = new javax.swing.JButton();
-        btnEnter = new javax.swing.JButton();
         lblOperator = new javax.swing.JLabel();
         lblResult2 = new javax.swing.JLabel();
         lblResult3 = new javax.swing.JLabel();
+        txtNumber1 = new javax.swing.JTextField();
+        txtNumber2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,21 +56,11 @@ public class OtherExample extends javax.swing.JFrame {
             }
         });
 
-        txtNumber1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
         btnSum.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSum.setText("+");
         btnSum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSumActionPerformed(evt);
-            }
-        });
-
-        btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnEnter.setText("ENTER");
-        btnEnter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEnterActionPerformed(evt);
             }
         });
 
@@ -89,6 +79,12 @@ public class OtherExample extends javax.swing.JFrame {
         lblResult3.setText("RESULT3");
         lblResult3.setBorder(new javax.swing.border.MatteBorder(null));
 
+        txtNumber1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNumber1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txtNumber2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNumber2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,16 +92,19 @@ public class OtherExample extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
-                        .addComponent(btnEnter))
-                    .addComponent(btnBack)
                     .addComponent(lblResult1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtNumber1)
                     .addComponent(lblOperator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblResult2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblResult3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblResult3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNumber1)
+                            .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(111, 111, 111)
+                        .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(btnSum)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -119,13 +118,13 @@ public class OtherExample extends javax.swing.JFrame {
                 .addComponent(lblResult2)
                 .addGap(18, 18, 18)
                 .addComponent(lblResult3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSum)
-                    .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addComponent(btnSum)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(btnBack)
                 .addContainerGap())
         );
@@ -145,23 +144,12 @@ public class OtherExample extends javax.swing.JFrame {
         lblResult1.setText(String.valueOf(txtNumber1.getText()));
         base.setNumber1(Double.valueOf(lblResult1.getText()));
         lblOperator.setText("+");
-        txtNumber1.setText("");
-     
-    }//GEN-LAST:event_btnSumActionPerformed
-
-    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        Base base = new Base();
-        
-        lblResult1.setText(String.valueOf(base.getNumber1()));
-        lblResult2.setText(String.valueOf(txtNumber1.getText()));
+        lblResult2.setText(String.valueOf(txtNumber2.getText()));
         base.setNumber2(Double.valueOf(lblResult2.getText()));
-        lblOperator.setText("+");
+        lblResult3.setText(String.valueOf(base.getResultSumming()));
         txtNumber1.setText("");
-        
-        //lblResult3.setText(String.valueOf(base.getResultSumming()));
-        double result = Double.valueOf(lblResult1.getText())+Double.valueOf(lblResult2.getText());
-        lblResult3.setText(String.valueOf(result));
-    }//GEN-LAST:event_btnEnterActionPerformed
+        txtNumber2.setText(""); 
+    }//GEN-LAST:event_btnSumActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,13 +189,13 @@ public class OtherExample extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnEnter;
     private javax.swing.JButton btnSum;
     private javax.swing.JLabel lblOperator;
     private javax.swing.JLabel lblResult1;
     private javax.swing.JLabel lblResult2;
     private javax.swing.JLabel lblResult3;
     private javax.swing.JTextField txtNumber1;
+    private javax.swing.JTextField txtNumber2;
     // End of variables declaration//GEN-END:variables
 
     private Object resultSum(ArrayList numbers) {

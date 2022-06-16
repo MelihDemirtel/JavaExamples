@@ -34,6 +34,7 @@ public class Example2 extends javax.swing.JFrame {
         btnMultiplication = new javax.swing.JButton();
         btnDivision = new javax.swing.JButton();
         btnOtherExample = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +101,14 @@ public class Example2 extends javax.swing.JFrame {
             }
         });
 
+        btnBack.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnBack.setText("<-- Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +117,8 @@ public class Example2 extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnOtherExample))
                     .addComponent(lblResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -148,7 +158,9 @@ public class Example2 extends javax.swing.JFrame {
                     .addComponent(btnMultiplication)
                     .addComponent(btnDivision))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(btnOtherExample)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOtherExample)
+                    .addComponent(btnBack))
                 .addContainerGap())
         );
 
@@ -207,6 +219,12 @@ public class Example2 extends javax.swing.JFrame {
             this.setVisible(false);
     }//GEN-LAST:event_btnOtherExampleActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+            Example1 example1 = new Example1();
+            example1.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,6 +263,7 @@ public class Example2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAvarage;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnExtraction;
     private javax.swing.JButton btnMultiplication;
