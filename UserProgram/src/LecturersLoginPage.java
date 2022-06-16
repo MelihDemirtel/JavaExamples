@@ -38,9 +38,9 @@ public class LecturersLoginPage extends javax.swing.JFrame {
         lblNotification = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(400, 100));
+        setLocation(new java.awt.Point(500, 100));
         setName("Lecturer Login"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(430, 330));
+        setPreferredSize(new java.awt.Dimension(430, 340));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

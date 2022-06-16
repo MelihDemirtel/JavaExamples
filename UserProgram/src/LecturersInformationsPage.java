@@ -8,6 +8,8 @@
  * @author EXT02D47194
  */
 public class LecturersInformationsPage extends javax.swing.JFrame {
+
+    private String BaseInformations;
     
     /**
      * Creates new form LecturersInformationsPage
@@ -33,10 +35,12 @@ public class LecturersInformationsPage extends javax.swing.JFrame {
         lblFirstName = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
         lblGsmNo = new javax.swing.JLabel();
+        btnGetInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Personal Informations");
-        setLocation(new java.awt.Point(400, 100));
+        setLocation(new java.awt.Point(500, 100));
+        setPreferredSize(new java.awt.Dimension(430, 340));
 
         lblFirstNameStatic.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFirstNameStatic.setText("First Name :");
@@ -70,7 +74,7 @@ public class LecturersInformationsPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblGsmNo, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
+                    .addComponent(lblGsmNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,6 +95,14 @@ public class LecturersInformationsPage extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
+        btnGetInfo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnGetInfo.setText("GET INFORMATIONS");
+        btnGetInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,17 +111,32 @@ public class LecturersInformationsPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(btnGetInfo)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnGetInfo)
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGetInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetInfoActionPerformed
+        BaseInformations baseInformations = new BaseInformations();
+        lblFirstName.setText(baseInformations.getFirstName());
+        lblLastName.setText(baseInformations.getLastName());
+        lblGsmNo.setText(baseInformations.getMsisdn());
+        
+        
+    }//GEN-LAST:event_btnGetInfoActionPerformed
    
     /**
      * @param args the command line arguments
@@ -146,6 +173,7 @@ public class LecturersInformationsPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGetInfo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblFirstNameStatic;
